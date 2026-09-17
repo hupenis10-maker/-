@@ -16,7 +16,7 @@
 <main>
 <section id="map">
   <svg id="world" aria-label="Карта Европы" xmlns="http://www.w3.org/2000/svg"></svg>
-  <div id="mapStatus">Подготовка карты…</div>
+  <div id="mapStatus">Офлайн-карта: подготовка…</div>
   <div id="tooltip"></div>
 </section>
 <aside>
@@ -26,18 +26,17 @@
   </div>
   <div class="tabs"><button class="tab active" data-tab="army">Армия</button><button class="tab" data-tab="prod">Производство</button><button class="tab" data-tab="research">Технологии</button><button class="tab" data-tab="diplo">Дипломатия</button><button class="tab" data-tab="help">Помощь</button></div>
   <div id="army" class="tabbody">
-    <div class="notice">Выбери провинцию с дивизией. Затем ПКМ по цели. Красная линия = фронт.</div>
+    <div class="notice">Выбери регион с дивизией. Затем ПКМ по соседней цели. Красная линия = фронт.</div>
     <div id="selection"></div><h3>Дивизии</h3><div id="units"></div>
     <div class="recruit-row"><button id="recruitInf">➕ Пехота</button><button id="recruitArt">💥 Артиллерия</button><button id="recruitTank">🛡 Танки</button></div>
   </div>
   <div id="prod" class="tabbody hidden"><h3>Очередь производства</h3><div id="queue"></div><div class="notice">Заводы выпускают технику автоматически. Больше заводов = быстрее армия.</div><button id="buildFactory" class="wide">🏭 Построить завод · 50🏛️</button></div>
   <div id="research" class="tabbody hidden"><h3>Технологии</h3><div id="techs"></div></div>
   <div id="diplo" class="tabbody hidden"><h3>Страны Европы</h3><div id="countries"></div></div>
-  <div id="help" class="tabbody hidden"><h3>Как воевать</h3><ol><li>Выбери свою дивизию на карте.</li><li>ПКМ по своей провинции — марш.</li><li>ПКМ по вражеской — атака. Для этого нужна война.</li><li>Организация падает в бою. Отводи войска, пока они не разрушены.</li><li>Концентрируй несколько дивизий на одном участке фронта.</li><li>Производи технику и исследуй логистику перед долгим наступлением.</li><li>После прорыва занимай соседние провинции, чтобы растянуть фронт противника.</li></ol><h3>Управление</h3><p>Пробел — пауза. 1/2/3 — скорость. Колесо — масштаб. ЛКМ — выбрать. ПКМ — приказ.</p></div>
+  <div id="help" class="tabbody hidden"><h3>Как воевать</h3><ol><li>Выбери свою дивизию на карте.</li><li>ПКМ по соседнему своему региону — марш.</li><li>ПКМ по вражескому региону — атака, если идет война.</li><li>Организация падает в бою. Отводи ослабленные части.</li><li>Концентрируй несколько дивизий на одном участке фронта.</li><li>Производи технику и исследуй технологии перед наступлением.</li></ol><h3>Управление</h3><p>Пробел — пауза. 1/2/3 — скорость. Колесо — масштаб. ЛКМ — выбрать. ПКМ — приказ.</p></div>
   <div class="log" id="log"></div>
 </aside>
 </main>
-<footer>География: Natural Earth Admin-1 · при недоступной сети игра автоматически переходит в офлайн-режим</footer>
-<script src="game.js?v=20260917fix3"></script>
-<script src="map-fix.js?v=2"></script>
+<footer>Iron Front RTS · карта запускается полностью офлайн, без внешнего GeoJSON</footer>
+<script src="game2.js?v=20260917"></script>
 </body></html>
