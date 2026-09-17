@@ -1,23 +1,22 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Iron Front RTS — Europe</title>
 <link rel="stylesheet" href="style.css">
-<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
 </head>
 <body>
 <header>
   <div class="brand">IRON FRONT <small>EUROPE RTS</small></div>
   <label>Страна <select id="country"></select></label>
-  <span id="date">загрузка карты…</span><span id="speed">▶ 1x</span>
+  <span id="date">подготовка…</span><span id="speed">▶ 1x</span>
   <div class="speeds"><button data-speed="1">1x</button><button data-speed="2">2x</button><button data-speed="3">3x</button></div>
   <button id="pause">⏸ Пауза</button><button id="newGame">Новая</button><button id="save">Сохранить</button><button id="load">Загрузить</button>
 </header>
 <main>
 <section id="map">
-  <svg id="world" aria-label="Карта Европы"></svg>
-  <div id="mapStatus">Загрузка реальных административных провинций…</div>
+  <svg id="world" aria-label="Карта Европы" xmlns="http://www.w3.org/2000/svg"></svg>
+  <div id="mapStatus">Подготовка карты…</div>
   <div id="tooltip"></div>
 </section>
 <aside>
@@ -28,17 +27,16 @@
   <div class="tabs"><button class="tab active" data-tab="army">Армия</button><button class="tab" data-tab="prod">Производство</button><button class="tab" data-tab="research">Технологии</button><button class="tab" data-tab="diplo">Дипломатия</button><button class="tab" data-tab="help">Помощь</button></div>
   <div id="army" class="tabbody">
     <div class="notice">Выбери провинцию с дивизией. Затем ПКМ по цели. Красная линия = фронт.</div>
-    <div id="selection"></div>
-    <h3>Дивизии</h3><div id="units"></div>
+    <div id="selection"></div><h3>Дивизии</h3><div id="units"></div>
     <div class="recruit-row"><button id="recruitInf">➕ Пехота</button><button id="recruitArt">💥 Артиллерия</button><button id="recruitTank">🛡 Танки</button></div>
   </div>
-  <div id="prod" class="tabbody hidden"><h3>Очередь производства</h3><div id="queue"></div><div class="notice">Заводы автоматически выпускают технику. Больше заводов = быстрее армия.</div><button id="buildFactory" class="wide">🏭 Построить завод · 50🏛️</button></div>
+  <div id="prod" class="tabbody hidden"><h3>Очередь производства</h3><div id="queue"></div><div class="notice">Заводы выпускают технику автоматически. Больше заводов = быстрее армия.</div><button id="buildFactory" class="wide">🏭 Построить завод · 50🏛️</button></div>
   <div id="research" class="tabbody hidden"><h3>Технологии</h3><div id="techs"></div></div>
   <div id="diplo" class="tabbody hidden"><h3>Страны Европы</h3><div id="countries"></div></div>
-  <div id="help" class="tabbody hidden"><h3>Как воевать</h3><ol><li>Выбери свою дивизию на карте.</li><li>ПКМ по своей провинции — марш.</li><li>ПКМ по вражеской — атака. Для этого нужна война.</li><li>Организация падает в бою. Отводи войска, пока они не разрушены.</li><li>Старайся концентрировать несколько дивизий на одном участке фронта.</li><li>Производи технику и исследуй логистику перед долгим наступлением.</li><li>После прорыва занимай соседние провинции, чтобы растянуть фронт противника.</li></ol><h3>Управление</h3><p>Пробел — пауза. 1/2/3 — скорость. Колесо мыши — масштаб карты. ЛКМ — выбрать провинцию. ПКМ — приказ.</p></div>
+  <div id="help" class="tabbody hidden"><h3>Как воевать</h3><ol><li>Выбери свою дивизию на карте.</li><li>ПКМ по своей провинции — марш.</li><li>ПКМ по вражеской — атака. Для этого нужна война.</li><li>Организация падает в бою. Отводи войска, пока они не разрушены.</li><li>Концентрируй несколько дивизий на одном участке фронта.</li><li>Производи технику и исследуй логистику перед долгим наступлением.</li><li>После прорыва занимай соседние провинции, чтобы растянуть фронт противника.</li></ol><h3>Управление</h3><p>Пробел — пауза. 1/2/3 — скорость. Колесо — масштаб. ЛКМ — выбрать. ПКМ — приказ.</p></div>
   <div class="log" id="log"></div>
 </aside>
 </main>
-<footer>География: Natural Earth Admin-1 · игровой сценарий альтернативной Европы · фронт и войны симулируются ИИ</footer>
+<footer>География: Natural Earth Admin-1 · при недоступной сети игра автоматически переходит в офлайн-режим</footer>
 <script src="game.js"></script>
 </body></html>
